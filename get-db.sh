@@ -1,1 +1,1 @@
-mc cp --recursive s3/projet-ape/sirene db/2023/base_sirene_ape_2023.parquet db-sirene-2023
+mc cp --recursive "s3/projet-ape/sirene db/2023/base_sirene_ape_2023.parquet" db-sirene-2023
