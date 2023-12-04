@@ -2,6 +2,7 @@ import pandas as pd
 from predict_fasttext import predict
 
 db = pd.read_parquet("db-sirene-2023/base_sirene_ape_2023.parquet")
+print(db.columns)
 
 db_auto=db[db["mode_calcul_ape"]=="AUTO"]
 

@@ -1,5 +1,6 @@
 import fasttext
 from preprocessor import Preprocessor
+from concatenate_var_cat import concatenate_var_cat
 import pandas as pd
 
 list_libs = ["guerisseur de boulanger", "boulanger"]
@@ -20,8 +21,11 @@ def predict(df, model_input=model_input, model_name="FastText-APE", version="v3"
     model = fasttext.load_model(
         f"/home/onyxia/work/codif-ape-db/{model_name}/{version}/default.bin"
     )
-    texts = cleaned_df.apply(
-        lambda row: row["libelle_activite_apet"],
+
+    cleaned_var_cat_concat_df = concatenate_var_cat(cleaned_df)
+  
+    texts = cleaned_var_cat_concat_df.apply(
+        lambda row: row["libelle_nettoye"],
         axis=1).to_list()
 
     predictions = model.predict(texts, model_input["k"])
