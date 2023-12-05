@@ -11,7 +11,7 @@ model_input = {
 }
 
 
-def predict(df, model_input=model_input, model_name="FastText-APE", version="v3"):
+def predict(df, version, model_input=model_input,  model_name="FastText-APE"):
 
     cleaned_df = Preprocessor().clean_text(
             df,
@@ -23,7 +23,7 @@ def predict(df, model_input=model_input, model_name="FastText-APE", version="v3"
     )
 
     cleaned_var_cat_concat_df = concatenate_var_cat(cleaned_df)
-  
+
     texts = cleaned_var_cat_concat_df.apply(
         lambda row: row["libelle_nettoye"],
         axis=1).to_list()
