@@ -53,4 +53,7 @@ def predict(df, model_input=model_input, model_name="FastText-APE", version="v3"
     # Merge the initial and new DataFrame on the 'liasse_numero' column
     merged_df = pd.merge(result_df, df, on='liasse_numero', how='inner')
 
+    # Add final cleaned text:
+    merged_df["libelle_nettoye"] = texts
+
     return merged_df
