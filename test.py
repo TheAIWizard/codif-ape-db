@@ -7,7 +7,7 @@ print(db.columns)
 db_auto = db[db["mode_calcul_ape"] == "AUTO"]
 
 # Définir la plage de dates à tester (avril à juin 26)
-date_debut = pd.Timestamp('2023-06-27', tz='UTC')
+date_debut = pd.Timestamp('2023-07-01', tz='UTC')
 date_fin = pd.Timestamp('2023-03-01', tz='UTC')
 
 # Filtrer les lignes où la date_modification est comprise entre avril et le 26 juin

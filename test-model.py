@@ -1,6 +1,6 @@
 import fasttext
 
-list_libs = ["lmnp locat meubl non professionnel AUTO_I NAT_SICORE_NaN SURF_NaN EVT_SICORE_01P"]
+list_libs = ["prestat servic webmarketing redact web referenc web community manag AUTO_X NAT_SICORE_NaN SURF_NaN EVT_SICORE_01P"]
 
 model_input = {
     "query": list_libs,
@@ -16,8 +16,8 @@ model = fasttext.load_model(
 
 predictions = model.predict(model_input["query"], model_input["k"])
 
-#print(predictions)
+print(predictions)
 
-import pandas as pd
-db = pd.read_parquet("db-sirene-2023/base_sirene_ape_2023.parquet")
-print(db[db["liasse_numero"] == "J00025076621"]["libelle_activite_apet"].iloc[0])
+# import pandas as pd
+# db = pd.read_parquet("db-sirene-2023/base_sirene_ape_2023.parquet")
+# print(db[db["liasse_numero"] == "J00025076621"]["libelle_activite_apet"].iloc[0])
